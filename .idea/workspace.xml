@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 4. Added constructor into Message class. Message class is serializable. Added task 5.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 5. Added realization in to class Connection. Added task 6.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675531117020</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finished task 5. Added realization in to class Connection. Added task 6.">
+      <created>1675532994290</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675532994290</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +134,7 @@
     <MESSAGE value="Finished task 2. Was realized work with console in ConsoleHelper class. Added task 3." />
     <MESSAGE value="Finished task 3. Was considered, about client-server protocol and added variables into enum class. Added task 4." />
     <MESSAGE value="Finished task 4. Added constructor into Message class. Message class is serializable. Added task 5." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 4. Added constructor into Message class. Message class is serializable. Added task 5." />
+    <MESSAGE value="Finished task 5. Added realization in to class Connection. Added task 6." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 5. Added realization in to class Connection. Added task 6." />
   </component>
 </project>
