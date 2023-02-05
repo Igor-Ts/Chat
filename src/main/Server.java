@@ -3,8 +3,12 @@ package main;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
+
+    private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>(); // key - client name, value - connection
 
     public static void main(String[] args) throws IOException {
         int port = ConsoleHelper.readInt();
@@ -28,9 +32,19 @@ public class Server {
             }
             if (clientSocket != null) {
                 handler = new Handler(clientSocket);
-                handler.run();
+                handler.start();
             }
+        }
+    }
 
+    public static void sendBroadcastMessage(Message message) {
+
+        for (Map.Entry <String,Connection> connect: connectionMap.entrySet()) {
+            try {
+                connect.getValue().send(message);
+            } catch (IOException e) {
+                ConsoleHelper.writeMessage("Can't send message to " + connect.getKey());
+            }
         }
     }
 
