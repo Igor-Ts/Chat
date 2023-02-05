@@ -39,7 +39,7 @@ public class Server {
 
     public static void sendBroadcastMessage(Message message) {
 
-        for (Map.Entry <String,Connection> connect: connectionMap.entrySet()) {
+        for (Map.Entry<String, Connection> connect : connectionMap.entrySet()) {
             try {
                 connect.getValue().send(message);
             } catch (IOException e) {
@@ -50,9 +50,25 @@ public class Server {
 
     private static class Handler extends Thread {
         Socket socket;
+
         public Handler(Socket socket) {
             this.socket = socket;
         }
 
+
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+            while(true){
+                connection.send(new Message(MessageType.NAME_REQUEST, "Please, write your name"));
+                Message reply = connection.receive();
+                if (reply.getType() == MessageType.USER_NAME) {
+                    String name = reply.getData();
+                    if (name.isEmpty() && !connectionMap.containsKey(name)) {
+                        connectionMap.put(name, connection);
+                        connection.send(new Message(MessageType.NAME_ACCEPTED, "Your name is accepted"));
+                        return name;
+                    }
+                }
+            }
+        }
     }
 }

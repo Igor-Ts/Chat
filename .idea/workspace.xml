@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 6. Realized server connection with Sockets and ServerSockets. Added task 7.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 7. Added method which send message to everyone in server. Added task 8.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675537756241</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finished task 7. Added method which send message to everyone in server. Added task 8.">
+      <created>1675603773358</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675603773358</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +151,7 @@
     <MESSAGE value="Finished task 4. Added constructor into Message class. Message class is serializable. Added task 5." />
     <MESSAGE value="Finished task 5. Added realization in to class Connection. Added task 6." />
     <MESSAGE value="Finished task 6. Realized server connection with Sockets and ServerSockets. Added task 7." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 6. Realized server connection with Sockets and ServerSockets. Added task 7." />
+    <MESSAGE value="Finished task 7. Added method which send message to everyone in server. Added task 8." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 7. Added method which send message to everyone in server. Added task 8." />
   </component>
 </project>
