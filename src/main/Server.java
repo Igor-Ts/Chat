@@ -70,5 +70,15 @@ public class Server {
                 }
             }
         }
+
+        private void sendListOfUsers(Connection connection, String userName) throws IOException {
+            for (Map.Entry<String, Connection> connect: connectionMap.entrySet()) {
+                String name = connect.getKey();
+                if (!userName.equals(name)) {
+                    Message message = new Message(MessageType.USER_ADDED, name);
+                    connection.send(message);
+                }
+            }
+        }
     }
 }
