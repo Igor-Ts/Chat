@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 8. Starting realizing the connection protocol with client. Was done handshake between client and server. Added task 9.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675614894463</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10.">
+      <created>1675711651882</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675711651882</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +167,7 @@
     <MESSAGE value="Finished task 6. Realized server connection with Sockets and ServerSockets. Added task 7." />
     <MESSAGE value="Finished task 7. Added method which send message to everyone in server. Added task 8." />
     <MESSAGE value="Finished task 8. Starting realizing the connection protocol with client. Was done handshake between client and server. Added task 9." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 8. Starting realizing the connection protocol with client. Was done handshake between client and server. Added task 9." />
+    <MESSAGE value="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10." />
   </component>
 </project>
