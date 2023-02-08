@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 10. Continued realization the connection protocol with client. Was done the while cycle where message is handling. Added task 11.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 11. Finished server realization. Some changes. Added task 12.">
+      <change afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ConsoleHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConsoleHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675712971407</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Finished task 11. Finished server realization. Some changes. Added task 12.">
+      <created>1675881338552</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675881338552</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +183,7 @@
     <MESSAGE value="Finished task 8. Starting realizing the connection protocol with client. Was done handshake between client and server. Added task 9." />
     <MESSAGE value="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10." />
     <MESSAGE value="Finished task 10. Continued realization the connection protocol with client. Was done the while cycle where message is handling. Added task 11." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 10. Continued realization the connection protocol with client. Was done the while cycle where message is handling. Added task 11." />
+    <MESSAGE value="Finished task 11. Finished server realization. Some changes. Added task 12." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 11. Finished server realization. Some changes. Added task 12." />
   </component>
 </project>
