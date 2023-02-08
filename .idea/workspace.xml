@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 11. Finished server realization. Some changes. Added task 12.">
-      <change afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675881338552</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13.">
+      <created>1675885142734</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675885142734</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +190,7 @@
     <MESSAGE value="Finished task 9. Continued realization the connection protocol with client. Was done method which send list of users to the client. Added task 10." />
     <MESSAGE value="Finished task 10. Continued realization the connection protocol with client. Was done the while cycle where message is handling. Added task 11." />
     <MESSAGE value="Finished task 11. Finished server realization. Some changes. Added task 12." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 11. Finished server realization. Some changes. Added task 12." />
+    <MESSAGE value="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13." />
   </component>
 </project>
