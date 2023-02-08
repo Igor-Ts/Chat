@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.net.SocketAddress;
 
 public class Connection {
-    private  final Socket socket;
+    private Socket socket;
     private final ObjectOutputStream out;
     private final ObjectInputStream in;
 
@@ -36,8 +36,8 @@ public class Connection {
     }
 
     public void close() throws IOException {
-        socket.close();
-        out.close();
         in.close();
+        out.close();
+        socket.close();
     }
 }

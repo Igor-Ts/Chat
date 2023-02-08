@@ -15,6 +15,7 @@ public class ConsoleHelper {
         String line = "";
         try {
              line = bufferedReader.readLine();
+             bufferedReader.close();
         } catch (Exception e) {
             writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
             readString();
