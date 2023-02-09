@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 13. Added utility methods into Client class. Added task 14.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 14. Was written a main methods in client class. Added task 15.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675886589184</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finished task 14. Was written a main methods in client class. Added task 15.">
+      <created>1675968127208</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1675968127208</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +206,7 @@
     <MESSAGE value="Finished task 11. Finished server realization. Some changes. Added task 12." />
     <MESSAGE value="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13." />
     <MESSAGE value="Finished task 13. Added utility methods into Client class. Added task 14." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 13. Added utility methods into Client class. Added task 14." />
+    <MESSAGE value="Finished task 14. Was written a main methods in client class. Added task 15." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 14. Was written a main methods in client class. Added task 15." />
   </component>
 </project>

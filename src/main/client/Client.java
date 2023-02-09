@@ -5,20 +5,19 @@ import main.ConsoleHelper;
 import main.Message;
 import main.MessageType;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
-public class Client {
+
+public class Client extends Thread{
     protected Connection connection;
     private volatile boolean clientConnected = false;
 
     public static void main(String[] args) {
         Client client = new Client();
-        client.run();
+        client.start();
     }
 
-    protected void run() {
+    public void run() {
         SocketThread socketThread = getSocketThread();
         socketThread.setDaemon(true);
         socketThread.start();
@@ -78,7 +77,25 @@ public class Client {
         }
     }
 
-    public static class SocketThread extends Thread {
+    public class SocketThread extends Thread {
 
+        protected void processIncomingMessage(String message) {
+            ConsoleHelper.writeMessage(message);
+        }
+
+        protected void informAboutAddingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " has enter the chat");
+        }
+
+        protected void informAboutDeletingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " has left from the chat");
+        }
+
+        protected void notifyConnectionStatusChanged(boolean clientConnected) {
+            synchronized (Client.this) {
+                Client.this.clientConnected = clientConnected;
+                Client.this.notify();
+            }
+        }
     }
 }
