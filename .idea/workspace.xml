@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 13. Added utility methods into Client class. Added task 14.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675885142734</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finished task 13. Added utility methods into Client class. Added task 14.">
+      <created>1675886589184</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675886589184</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +199,7 @@
     <MESSAGE value="Finished task 10. Continued realization the connection protocol with client. Was done the while cycle where message is handling. Added task 11." />
     <MESSAGE value="Finished task 11. Finished server realization. Some changes. Added task 12." />
     <MESSAGE value="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 12. Strated client realization. Added new package and main class Client. Added task 13." />
+    <MESSAGE value="Finished task 13. Added utility methods into Client class. Added task 14." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 13. Added utility methods into Client class. Added task 14." />
   </component>
 </project>
