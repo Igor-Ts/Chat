@@ -97,5 +97,56 @@ public class Client extends Thread{
                 Client.this.notify();
             }
         }
+
+        protected void clientHandshake() throws IOException, ClassNotFoundException {
+            while (true) {
+                Message msg;
+                while (true) {
+                    try {
+                        msg = connection.receive();
+                    } catch (ClassNotFoundException e) {
+                        throw new IOException("Unexpected MessageType");
+                    }
+
+                    if (msg.getType() == MessageType.NAME_REQUEST) {
+                        String name = getUserName();
+                        Message nameMessage = new Message(MessageType.USER_NAME, name);
+                        connection.send(nameMessage);
+                    } else if (msg.getType() == MessageType.NAME_ACCEPTED) {
+                        notifyConnectionStatusChanged(true);
+                        break;
+                    } else {
+                        throw new IOException("Unexpected MessageType");
+                    }
+                }
+            }
+        }
+
+        protected void clientMainLoop() throws IOException, ClassNotFoundException {
+            Message msg;
+            while (true) {
+                try {
+                    msg = connection.receive();
+                } catch (ClassNotFoundException e) {
+                    throw new IOException("Unexpected MessageType");
+                }
+                switch (msg.getType()){
+                    case TEXT: {
+                        processIncomingMessage(msg.getData());
+                        break;
+                    }
+                    case USER_ADDED: {
+                        informAboutAddingNewUser(msg.getData());
+                        break;
+                    }
+                    case USER_REMOVED: {
+                        informAboutDeletingNewUser(msg.getData());
+                        break;
+                    }
+                    default:
+                        throw new IOException("Unexpected message");
+                }
+            }
+        }
     }
 }
