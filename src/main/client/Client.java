@@ -6,6 +6,7 @@ import main.Message;
 import main.MessageType;
 
 import java.io.IOException;
+import java.net.Socket;
 
 
 public class Client extends Thread{
@@ -23,7 +24,7 @@ public class Client extends Thread{
         socketThread.start();
         try {
             synchronized (this){
-                Thread.currentThread().wait();
+                wait();
             }
         } catch (Exception e) {
             ConsoleHelper.writeMessage("Something is wrong!!!!");
@@ -32,18 +33,17 @@ public class Client extends Thread{
         }
         if (clientConnected) {
             ConsoleHelper.writeMessage("Connection is done. If u want to quit write 'exit'");
-        }else {
+            while (true) {
+                String text = ConsoleHelper.readString();
+                if (text.equalsIgnoreCase("exit")){
+                    break;
+                } else if(shouldSendTextFromConsole()) {
+                    sendTextMessage(text);
+                }
+            }
+        } else {
             ConsoleHelper.writeMessage("An error occurred when the client was running");
         }
-        while (true){
-            String text = ConsoleHelper.readString();
-            if (text.equals("exit")){
-                break;
-            } else if(shouldSendTextFromConsole()) {
-                sendTextMessage(text);
-            }
-        }
-
     }
     protected String getServerAddress() {
         ConsoleHelper.writeMessage("Please, write server address (localhost, ip)");
@@ -70,7 +70,7 @@ public class Client extends Thread{
 
     protected void sendTextMessage(String text) {
         try {
-            connection.send(new Message(MessageType.TEXT,text));
+            connection.send(new Message(MessageType.TEXT, text));
         } catch (IOException e) {
             ConsoleHelper.writeMessage("Connection lost");
             clientConnected = false;
@@ -147,6 +147,23 @@ public class Client extends Thread{
                         throw new IOException("Unexpected message");
                 }
             }
+        }
+
+        @Override
+        public void run() {
+            String address = getServerAddress();
+            int port = getServerPort();
+            try {
+                Socket socket = new Socket(address,port);
+                 connection = new Connection(socket);
+                 clientHandshake();
+                 clientMainLoop();
+            } catch (IOException | ClassNotFoundException e ) {
+                notifyConnectionStatusChanged(false);
+            }
+
+
+
         }
     }
 }

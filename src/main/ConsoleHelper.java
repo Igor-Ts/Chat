@@ -12,25 +12,23 @@ public class ConsoleHelper {
     }
 
     public static String readString() {
-        String line = "";
-        try {
-             line = bufferedReader.readLine();
-             bufferedReader.close();
-        } catch (Exception e) {
-            writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
-            readString();
+        while (true) {
+            try {
+                return bufferedReader.readLine();
+            } catch (Exception e) {
+                writeMessage("Some error occurred when trying to enter a text. Please try again.");
+            }
         }
-        return line;
     }
 
     public static int readInt() {
-        int line = 0;
-        try {
-            line = Integer.parseInt(readString());
-        } catch (NumberFormatException e) {
-            writeMessage("Произошла ошибка при попытке ввода числа. Попробуйте еще раз.");
-            readInt();
+        while (true) {
+            try {
+                return Integer.parseInt(readString());
+            } catch (NumberFormatException e) {
+                writeMessage("Some error occurred when trying to enter a number. Please try again.");
+            }
         }
-        return line;
     }
+
 }

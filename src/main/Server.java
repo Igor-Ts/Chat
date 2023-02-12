@@ -1,6 +1,5 @@
 package main;
 
-import javax.net.SocketFactory;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -16,12 +15,13 @@ public class Server {
         ConsoleHelper.writeMessage("Input server port: ");
         int port = ConsoleHelper.readInt();
 
-        try {InetAddress ia;
+        try {
+            InetAddress ia;
             ia = InetAddress.getByName("localhost");
             ServerSocket serverSocket= new ServerSocket(port,0,ia);
             ConsoleHelper.writeMessage("Server is running");
+            System.out.println(serverSocket.getInetAddress());
              while (true) {
-                 System.out.println("ddd");
                  new Handler(serverSocket.accept()).start();
              }
         } catch (Exception e) {
@@ -31,11 +31,11 @@ public class Server {
 
     public static void sendBroadcastMessage(Message message) {
 
-        for (Map.Entry<String, Connection> connect : connectionMap.entrySet()) {
+        for (Connection connection : connectionMap.values()) {
             try {
-                connect.getValue().send(message);
+                connection.send(message);
             } catch (IOException e) {
-                ConsoleHelper.writeMessage("Can't send message to " + connect.getKey());
+                ConsoleHelper.writeMessage("Can't send message");
             }
         }
     }
@@ -50,13 +50,13 @@ public class Server {
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
             while(true){
-                connection.send(new Message(MessageType.NAME_REQUEST,"Type your name"));
+                connection.send(new Message(MessageType.NAME_REQUEST));
                 Message reply = connection.receive();
-                if (reply.getType().equals(MessageType.USER_NAME)) {
+                if (reply.getType() == MessageType.USER_NAME) {
                     String name = reply.getData();
-                    if (name.isEmpty() && !connectionMap.containsKey(name)) {
+                    if (!name.isEmpty() && !connectionMap.containsKey(name)) {
                         connectionMap.put(name, connection);
-                        connection.send(new Message(MessageType.NAME_ACCEPTED, "Your name is accepted"));
+                        connection.send(new Message(MessageType.NAME_ACCEPTED));
                         return name;
                     }
                 }
@@ -90,8 +90,8 @@ public class Server {
             ConsoleHelper.writeMessage("Established new connection with remote address " + socket.getRemoteSocketAddress());
             String clientName = null;
             try {Connection connection = new Connection(socket);
-                System.out.println("im here");
                 clientName = serverHandshake(connection);
+                sendBroadcastMessage(new Message(MessageType.USER_ADDED, clientName));
                 sendListOfUsers(connection, clientName);
                 for (String names: connectionMap.keySet()) {
                     if (!names.equals(clientName)){
@@ -103,11 +103,7 @@ public class Server {
 
             } catch (IOException | ClassNotFoundException e) {
                 ConsoleHelper.writeMessage("Exception in exchanging data with remote address ");
-/*                try {
-                    if (connection != null){
-                        connection.close();
-                    }
-                } catch (IOException ex) {}*/
+            } finally {
                 if (clientName != null && connectionMap.containsKey(clientName)) {
                     Message removeUserMessage = new Message(MessageType.USER_REMOVED, clientName);
                     sendBroadcastMessage(removeUserMessage);
