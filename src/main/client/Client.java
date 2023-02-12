@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 
-public class Client extends Thread{
+public class Client extends Thread {
     protected Connection connection;
     private volatile boolean clientConnected = false;
 
@@ -26,19 +26,21 @@ public class Client extends Thread{
             synchronized (this){
                 wait();
             }
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             ConsoleHelper.writeMessage("Something is wrong!!!!");
             Thread.currentThread().interrupt();
             socketThread.interrupt();
         }
         if (clientConnected) {
             ConsoleHelper.writeMessage("Connection is done. If u want to quit write 'exit'");
-            while (true) {
+            while (clientConnected) {
                 String text = ConsoleHelper.readString();
                 if (text.equalsIgnoreCase("exit")){
                     break;
-                } else if(shouldSendTextFromConsole()) {
-                    sendTextMessage(text);
+                } else {
+                    if(shouldSendTextFromConsole()) {
+                        sendTextMessage(text);
+                    }
                 }
             }
         } else {
@@ -99,25 +101,22 @@ public class Client extends Thread{
         }
 
         protected void clientHandshake() throws IOException, ClassNotFoundException {
-            while (true) {
-                Message msg;
-                while (true) {
-                    try {
-                        msg = connection.receive();
-                    } catch (ClassNotFoundException e) {
-                        throw new IOException("Unexpected MessageType");
-                    }
+            Message msg;
+            while (!clientConnected) {
+                try {
+                    msg = connection.receive();
+                } catch (ClassNotFoundException e) {
+                    throw new IOException("Unexpected MessageType");
+                }
 
-                    if (msg.getType() == MessageType.NAME_REQUEST) {
-                        String name = getUserName();
-                        Message nameMessage = new Message(MessageType.USER_NAME, name);
-                        connection.send(nameMessage);
-                    } else if (msg.getType() == MessageType.NAME_ACCEPTED) {
+                if (msg.getType() == MessageType.NAME_REQUEST) {
+                    String name = getUserName();
+                    Message nameMessage = new Message(MessageType.USER_NAME, name);
+                    connection.send(nameMessage);
+                } else {
+                    if (msg.getType() == MessageType.NAME_ACCEPTED) {
                         notifyConnectionStatusChanged(true);
-                        break;
-                    } else {
-                        throw new IOException("Unexpected MessageType");
-                    }
+                    } else throw new IOException("Unexpected MessageType");
                 }
             }
         }
@@ -161,8 +160,6 @@ public class Client extends Thread{
             } catch (IOException | ClassNotFoundException e ) {
                 notifyConnectionStatusChanged(false);
             }
-
-
 
         }
     }

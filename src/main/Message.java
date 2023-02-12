@@ -3,8 +3,8 @@ package main;
 import java.io.Serializable;
 
 public class Message implements Serializable {
-    final MessageType type;
-    final String data;
+    private final MessageType type;
+    private final String data;
 
     public Message(MessageType type, String data) {
         this.type = type;
@@ -13,7 +13,7 @@ public class Message implements Serializable {
 
     public Message(MessageType type) {
         this.type = type;
-        data = null;
+        this.data = null;
     }
 
     public MessageType getType() {

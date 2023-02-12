@@ -77,8 +77,7 @@ public class Server {
             while (true) {
                 Message message = connection.receive();
                 if (message.getType() == MessageType.TEXT) {
-                    Message newMessage = new Message(MessageType.TEXT,userName + ": " + message.getData());
-                    sendBroadcastMessage(newMessage);
+                    sendBroadcastMessage(new Message(MessageType.TEXT,userName + ": " + message.getData()));
                 } else {
                     ConsoleHelper.writeMessage("Wrong type message!");
                 }
@@ -87,27 +86,23 @@ public class Server {
 
         @Override
         public void run() {
-            ConsoleHelper.writeMessage("Established new connection with remote address " + socket.getRemoteSocketAddress());
+            if (socket != null && socket.getRemoteSocketAddress() != null){
+                ConsoleHelper.writeMessage("Established new connection with remote address " + socket.getRemoteSocketAddress());
+            }
             String clientName = null;
-            try {Connection connection = new Connection(socket);
+            try (Connection connection = new Connection(socket)) {
                 clientName = serverHandshake(connection);
                 sendBroadcastMessage(new Message(MessageType.USER_ADDED, clientName));
                 sendListOfUsers(connection, clientName);
-                for (String names: connectionMap.keySet()) {
-                    if (!names.equals(clientName)){
-                        Message msg = new Message(MessageType.TEXT, names);
-                        connection.send(msg);
-                    }
-                }
                 serverMainLoop(connection, clientName);
-
             } catch (IOException | ClassNotFoundException e) {
                 ConsoleHelper.writeMessage("Exception in exchanging data with remote address ");
             } finally {
-                if (clientName != null && connectionMap.containsKey(clientName)) {
+                if (clientName != null) {
+                    connectionMap.remove(clientName);
                     Message removeUserMessage = new Message(MessageType.USER_REMOVED, clientName);
                     sendBroadcastMessage(removeUserMessage);
-                    connectionMap.remove(clientName);
+
                 }
             }
             ConsoleHelper.writeMessage("Connection was closed");
