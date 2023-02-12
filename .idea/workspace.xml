@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 16. Added necessary methods into SocketThread class. Added task 17.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 17. Class client was done and some changes in other classes. Added task 18.">
+      <change afterPath="$PROJECT_DIR$/src/main/client/BotClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ConsoleHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConsoleHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676041905469</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Finished task 17. Class client was done and some changes in other classes. Added task 18.">
+      <created>1676207212305</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676207212305</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +244,7 @@
     <MESSAGE value="Finished task 14. Was written a main methods in client class. Added task 15." />
     <MESSAGE value="Finished task 15. Added extra methods into SocketThread class. Added task 16." />
     <MESSAGE value="Finished task 16. Added necessary methods into SocketThread class. Added task 17." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished task 16. Added necessary methods into SocketThread class. Added task 17." />
+    <MESSAGE value="Finished task 17. Class client was done and some changes in other classes. Added task 18." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished task 17. Class client was done and some changes in other classes. Added task 18." />
   </component>
 </project>
