@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 18. Added new class botClient. Started realization. Added task 19.">
+    <list default="true" id="1a600266-0bcf-4b95-8fca-918c377066d8" name="Changes" comment="Finished task 19. botClient was done. Added simple help functions like date, time etc. Added task 20.">
+      <change afterPath="$PROJECT_DIR$/src/main/client/ClientGuiModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/client/ClientGuiView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ConsoleHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConsoleHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/BotClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/BotClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +43,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/QA/work/IdeaProjects/Chat&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/QA/work/IdeaProjects/Chat&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.BotClient">
@@ -91,9 +91,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.BotClient" />
         <item itemvalue="Application.BotClient" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
