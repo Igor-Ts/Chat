@@ -18,12 +18,11 @@ public class Server {
         try {
             InetAddress ia;
             ia = InetAddress.getByName("localhost");
-            ServerSocket serverSocket= new ServerSocket(port,0,ia);
+            ServerSocket serverSocket = new ServerSocket(port, 0, ia);
             ConsoleHelper.writeMessage("Server is running");
-            System.out.println(serverSocket.getInetAddress());
-             while (true) {
-                 new Handler(serverSocket.accept()).start();
-             }
+            while (true) {
+                new Handler(serverSocket.accept()).start();
+            }
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -49,7 +48,7 @@ public class Server {
 
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-            while(true){
+            while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST));
                 Message reply = connection.receive();
                 if (reply.getType() == MessageType.USER_NAME) {
@@ -64,7 +63,7 @@ public class Server {
         }
 
         private void sendListOfUsers(Connection connection, String userName) throws IOException {
-            for (Map.Entry<String, Connection> connect: connectionMap.entrySet()) {
+            for (Map.Entry<String, Connection> connect : connectionMap.entrySet()) {
                 String name = connect.getKey();
                 if (!userName.equals(name)) {
                     Message message = new Message(MessageType.USER_ADDED, name);
@@ -77,7 +76,7 @@ public class Server {
             while (true) {
                 Message message = connection.receive();
                 if (message.getType() == MessageType.TEXT) {
-                    sendBroadcastMessage(new Message(MessageType.TEXT,userName + ": " + message.getData()));
+                    sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + message.getData()));
                 } else {
                     ConsoleHelper.writeMessage("Wrong type message!");
                 }
@@ -86,7 +85,7 @@ public class Server {
 
         @Override
         public void run() {
-            if (socket != null && socket.getRemoteSocketAddress() != null){
+            if (socket != null && socket.getRemoteSocketAddress() != null) {
                 ConsoleHelper.writeMessage("Established new connection with remote address " + socket.getRemoteSocketAddress());
             }
             String clientName = null;

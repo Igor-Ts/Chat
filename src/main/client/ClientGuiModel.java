@@ -6,13 +6,12 @@ import java.util.Set;
 
 public class ClientGuiModel {
 
-    final Set <String> allUserNames = new HashSet<>();
+    final Set<String> allUserNames = new HashSet<>();
     private String newMessage;
 
     public Set<String> getAllUserNames() {
         return Collections.unmodifiableSet(allUserNames);
     }
-
 
 
     public String getNewMessage() {

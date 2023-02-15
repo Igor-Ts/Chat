@@ -23,7 +23,7 @@ public class Client extends Thread {
         socketThread.setDaemon(true);
         socketThread.start();
         try {
-            synchronized (this){
+            synchronized (this) {
                 wait();
             }
         } catch (InterruptedException e) {
@@ -35,10 +35,10 @@ public class Client extends Thread {
             ConsoleHelper.writeMessage("Connection is done. If u want to quit write 'exit'");
             while (clientConnected) {
                 String text = ConsoleHelper.readString();
-                if (text.equalsIgnoreCase("exit")){
+                if (text.equalsIgnoreCase("exit")) {
                     break;
                 } else {
-                    if(shouldSendTextFromConsole()) {
+                    if (shouldSendTextFromConsole()) {
                         sendTextMessage(text);
                     }
                 }
@@ -47,6 +47,7 @@ public class Client extends Thread {
             ConsoleHelper.writeMessage("An error occurred when the client was running");
         }
     }
+
     protected String getServerAddress() {
         ConsoleHelper.writeMessage("Please, write server address (localhost, ip)");
         return ConsoleHelper.readString();
@@ -59,7 +60,7 @@ public class Client extends Thread {
 
     protected String getUserName() {
         ConsoleHelper.writeMessage("Please, write username");
-        return ConsoleHelper.readString();
+        return ConsoleHelper.readString().trim();
     }
 
     protected boolean shouldSendTextFromConsole() { // need to override if u want to close this opportunity
@@ -116,7 +117,9 @@ public class Client extends Thread {
                 } else {
                     if (msg.getType() == MessageType.NAME_ACCEPTED) {
                         notifyConnectionStatusChanged(true);
-                    } else throw new IOException("Unexpected MessageType");
+                    } else {
+                        break;
+                    }
                 }
             }
         }
@@ -129,7 +132,7 @@ public class Client extends Thread {
                 } catch (ClassNotFoundException e) {
                     throw new IOException("Unexpected MessageType");
                 }
-                switch (msg.getType()){
+                switch (msg.getType()) {
                     case TEXT: {
                         processIncomingMessage(msg.getData());
                         break;
@@ -153,11 +156,11 @@ public class Client extends Thread {
             String address = getServerAddress();
             int port = getServerPort();
             try {
-                Socket socket = new Socket(address,port);
-                 connection = new Connection(socket);
-                 clientHandshake();
-                 clientMainLoop();
-            } catch (IOException | ClassNotFoundException e ) {
+                Socket socket = new Socket(address, port);
+                connection = new Connection(socket);
+                clientHandshake();
+                clientMainLoop();
+            } catch (IOException | ClassNotFoundException e) {
                 notifyConnectionStatusChanged(false);
             }
 
